@@ -1,22 +1,29 @@
 let shareButtons = document.querySelectorAll(".title-share-button")
 const section = document.getElementById("section")
 
-preventAndCopy = (e) => {
-    e.preventDefault()
+prevent = () => {
+    prevent_default = (e) => {
+        e.preventDefault()
+    }
+
+    shareButtons.forEach(Button => 
+        Button.addEventListener("click", prevent_default))
 }
+prevent()
 
 const display = (sect) => {
     section.innerHTML = sect
     shareButtons = document.querySelectorAll(".title-share-button")
-    copyText()
+    prevent()
 }
 
-const copyText = () => {
-    shareButtons.forEach(shareButton =>
-        shareButton.addEventListener("click", preventAndCopy))
+const copyToClipboard = async (data) => {
+    try {
+        await navigator.clipboard.writeText(data)
+    } catch (e) {
+        console.log(e)
+    }
 }
-
-copyText()
 
 const link_bot = `
     <a href="https://github.com/diegoCoianiz" target="_blank" class="title">
@@ -55,7 +62,7 @@ const link_bot = `
 `
 
 const cont_bot = `
-    <div class="title">
+    <div class="title" onclick="copyToClipboard('diego.c.coianiz@gmail.com')">
         <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16"> 
                 <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/> 
@@ -64,7 +71,7 @@ const cont_bot = `
         <h3 class="mail-title expand">diego.c.coianiz @ gmail.com</h3>
         <div class="title-share-button"></div>
     </div>
-    <div class="title">
+    <div class="title" onclick="copyToClipboard('+543413751398')">
         <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
                 class="bi bi-phone" viewBox="0 0 16 16"> <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/> 
@@ -73,5 +80,14 @@ const cont_bot = `
         </div>
         <h3 class="expand">Arg (+54) 341 3 751398</h3>
         <div class="title-share-button"></div>
-</div>
+    </div>
+    <a href="https://drive.google.com/file/d/1RdL_YXBGOq2Aefy0s5MyTrNfWqFMJOR4/view?usp=share_link" target="_blank" class="title">
+    <div class="icon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-richtext" viewBox="0 0 16 16"> 
+        <path d="M7.5 3.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047L11 4.75V7a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 7v-.5s1.54-1.274 1.639-1.208zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/> 
+        <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/> <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/> </svg>
+    </div>
+    <h3 class="expand">CV!</h3>
+    <div class="title-share-button"></div>
+</a>
 `
