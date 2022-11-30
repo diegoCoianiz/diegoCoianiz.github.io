@@ -1,4 +1,4 @@
-const shareButtons = document.querySelectorAll(".title-share-button")
+const shareButtons = document.querySelectorAll("title-share-button")
 const description = document.getElementById("description")
 const nameId = document.getElementById("name")
 const name_descriptionID = document.getElementById("name_description")
@@ -13,18 +13,23 @@ initName = () => {
         setTimeout(() => {
             nameToDOM += name_[i] 
             nameId.innerHTML = nameToDOM
-        }, transition_*4*i);
+        }, transition_*3*i);
     }
 
-    description_ = `Backend Dev. Rosario, Argentina <h1 class="name-icon">🌎`
+    description_ = `Backend Dev. Rosario, Argentina<`
     descriptionToDOM = "<h6>"
     
     for (let i = 0; i < description_.length; i++) {
         setTimeout(() => {
-            descriptionToDOM += description_[i] 
-            name_descriptionID.innerHTML = descriptionToDOM
-        }, transition_*i);
-    }    
+            if(description_[i] == "<"){
+                descriptionToDOM += `<h1 class="name-icon">🌎`
+                name_descriptionID.innerHTML = descriptionToDOM
+            }else {
+                descriptionToDOM += description_[i] 
+                name_descriptionID.innerHTML = descriptionToDOM
+            }
+        }, transition_*i);    
+    }
 }
 
 initName()
