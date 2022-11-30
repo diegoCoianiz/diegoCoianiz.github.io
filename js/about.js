@@ -8,27 +8,27 @@ initName = () => {
 
     name_ = `@diegoCoianiz`
     nameToDOM = "<h1>"
-    
+
     for (let i = 0; i < name_.length; i++) {
         setTimeout(() => {
-            nameToDOM += name_[i] 
+            nameToDOM += name_[i]
             nameId.innerHTML = nameToDOM
-        }, transition_*3*i);
+        }, transition_ * 3 * i);
     }
 
     description_ = `Backend Dev. Rosario, Argentina<`
     descriptionToDOM = "<h6>"
-    
+
     for (let i = 0; i < description_.length; i++) {
         setTimeout(() => {
-            if(description_[i] == "<"){
+            if (description_[i] == "<") {
                 descriptionToDOM += `<h1 class="name-icon">🌎`
                 name_descriptionID.innerHTML = descriptionToDOM
-            }else {
-                descriptionToDOM += description_[i] 
+            } else {
+                descriptionToDOM += description_[i]
                 name_descriptionID.innerHTML = descriptionToDOM
             }
-        }, transition_*i);    
+        }, transition_ * i);
     }
 }
 
@@ -38,7 +38,7 @@ copyText = (e) => {
     e.preventDefault()
 }
 
-shareButtons.forEach(shareButton => 
+shareButtons.forEach(shareButton =>
     shareButton.addEventListener("click", copyText))
 
 englishDescription = true
