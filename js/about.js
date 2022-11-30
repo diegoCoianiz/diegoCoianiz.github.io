@@ -1,4 +1,3 @@
-const shareButtons = document.querySelectorAll("title-share-button")
 const description = document.getElementById("description")
 const nameId = document.getElementById("name")
 const name_descriptionID = document.getElementById("name_description")
@@ -34,12 +33,6 @@ initName = () => {
 
 initName()
 
-copyText = (e) => {
-    e.preventDefault()
-}
-
-shareButtons.forEach(shareButton =>
-    shareButton.addEventListener("click", copyText))
 
 englishDescription = true
 

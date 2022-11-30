@@ -1,8 +1,22 @@
+let shareButtons = document.querySelectorAll(".title-share-button")
 const section = document.getElementById("section")
+
+preventAndCopy = (e) => {
+    e.preventDefault()
+}
 
 const display = (sect) => {
     section.innerHTML = sect
+    shareButtons = document.querySelectorAll(".title-share-button")
+    copyText()
 }
+
+const copyText = () => {
+    shareButtons.forEach(shareButton =>
+        shareButton.addEventListener("click", preventAndCopy))
+}
+
+copyText()
 
 const link_bot = `
     <a href="https://github.com/diegoCoianiz" target="_blank" class="title">

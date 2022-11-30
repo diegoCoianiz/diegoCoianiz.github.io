@@ -82,7 +82,8 @@
     }
 }
 
-@media screen and (max-width: 415px) {
+/*415*/
+@media screen and (max-width: 425px) {
 
     header {
         height: 120px;
@@ -114,7 +115,8 @@
     }
 }
 
-@media screen and (max-width: 281px) {
+/*281*/ 
+@media screen and (max-width: 320px) {
 
     header {
         height: 90px;
