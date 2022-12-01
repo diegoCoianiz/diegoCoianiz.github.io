@@ -2,7 +2,7 @@ let shareButtons = document.querySelectorAll(".title-share-button")
 const section = document.getElementById("section")
 
 prevent = () => {
-    shareButtons.forEach(Button => 
+    shareButtons.forEach(Button =>
         Button.addEventListener("click", (e) => {
             e.preventDefault()
         }))
@@ -91,13 +91,14 @@ const cont_bot = `
 `
 
 const game_bot = `
-<div class="title">
-<div class="icon">
-<svg style="color:aliceblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z" /> 
-<path fill-rule="nonzero" d="M12 2a9.98 9.98 0 0 1 7.743 3.671L13.414 12l6.329 6.329A9.98 9.98 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2zm0 2a8 8 0 1 0 4.697 14.477l.208-.157-6.32-6.32 6.32-6.321-.208-.156a7.964 7.964 0 0 0-4.394-1.517L12 4zm0 1a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="white"/> </g> 
-</svg>
-</div>
-<h3 class="mail-title expand">Packman</h3>
-<div class="title-share-button"></div>
-</div>
+</a>
+    <a href="./pacman.html" class="title">
+    <div class="icon">
+    <svg style="color:aliceblue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z" /> 
+    <path fill-rule="nonzero" d="M12 2a9.98 9.98 0 0 1 7.743 3.671L13.414 12l6.329 6.329A9.98 9.98 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2zm0 2a8 8 0 1 0 4.697 14.477l.208-.157-6.32-6.32 6.32-6.321-.208-.156a7.964 7.964 0 0 0-4.394-1.517L12 4zm0 1a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="white"/> </g> 
+    </svg>
+    </div>
+    <h3 class="expand">Pac Man</h3>
+    <div class="title-share-button"></div>
+    </a>
 `

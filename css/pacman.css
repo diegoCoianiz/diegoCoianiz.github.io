@@ -1,3 +1,41 @@
+.image-container {
+    margin-top: -10px;
+    margin-right: 32rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    transition: cubic-bezier(.07, 1.41, .85, 1.41) 10s;
+}
+.image-container img {
+    height: 7rem;
+}
+
+.pacman-nav-title-share-button {
+    background-color: rgb(37, 37, 37);
+    border-radius: 20px;
+}
+
+.title {
+    margin-left: 5rem;
+}
+
+.title svg {
+    cursor: pointer;
+}
+
+.title-share-button-pacman {
+    background-color: rgb(37, 37, 37);
+    color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 0px 100px;
+    border-radius: 20px;
+    transition: cubic-bezier(.07, 1.41, .85, 1.41) 2s;
+    transform: scale(1.02);
+}
+.title-share-button-pacman h1 {
+    margin: 10px 0px;
+}
+
 .grid {
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +62,7 @@
 }
 
 .wall {
-    background-color: rgb(54, 32, 0);
+    background-color: rgb(37, 37, 37);
 }
 
 .power-pellet {

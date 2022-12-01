@@ -17,6 +17,7 @@ header {
     position: absolute;
 }
 
+
 nav {
     margin: 10px;
     flex-direction: row;
@@ -28,6 +29,7 @@ nav .title-share-button {
     margin: 1px 7rem;
     transition: cubic-bezier(.07, 1.41, .85, 1.41) 2s;
     transform: scale(1.02);
+    cursor: pointer;
 }
 
 .header-background {
@@ -108,7 +110,6 @@ h1 {
     overflow: hidden;
     position: relative;
     transition: cubic-bezier(.07, 1.41, .85, 1.41) 10s;
-
 }
 
 .image-container img {
@@ -136,6 +137,7 @@ h1 {
 }
 
 #translator {
+    color:aliceblue;
     margin-top: -25px;
     margin-left: 80%;
     width: 40px;
@@ -144,6 +146,7 @@ h1 {
     background-color: rgb(211, 43, 43);
     position: absolute;
     transition: cubic-bezier(.07, 1.41, .85, 1.41) 10s;
+    cursor: pointer;
 }
 
 #translator:hover {
@@ -153,8 +156,7 @@ h1 {
 
 #translator h1 {
     font-family: Georgia;
-    margin-top: 1px;
-    margin-left: 7px;
+    margin-top: -1px;
 }
 
 .expand:hover {
@@ -193,4 +195,8 @@ h1 {
 
 .section h3 {
     transition: cubic-bezier(.07, 1.41, .85, 1.41) 10s;
+}
+
+.grid {
+    margin-top: 7px;
 }

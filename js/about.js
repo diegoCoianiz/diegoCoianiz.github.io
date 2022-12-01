@@ -34,13 +34,13 @@ initName = () => {
 initName()
 
 
-englishDescription = true
+englishDescription = false
 
 const translator = () => {
     englishDescription = !englishDescription
     if (englishDescription) {
         description.innerHTML = `
-            <div id="translator" onclick="translator()"><h1 class="expand">T</h1></div>
+            <button id="translator" onclick="translator()"><h1 class="expand">T</h1></button>
             <h3>Hola, soy Juan Diego Coianiz 👋</h4>
             <h3>Programador full-Stack. Actualmente cursando las tecnicaturas
             de desarrollo de aplicaciones digitales, ciencia de datos e inteligencia
@@ -56,7 +56,7 @@ const translator = () => {
         `
     } else {
         description.innerHTML = `
-            <div id="translator" onclick="translator()"><h1 class="expand">T</h1></div>
+            <button id="translator" onclick="translator()"><h1 class="expand">T</h1></button>
             <h3>Hello there, I'm Juan Diego Coianiz 👋</h4>
             <h3>I'm a full-Stack progammer currently learning app developing, 
             data science & artifical intelligence at the 
