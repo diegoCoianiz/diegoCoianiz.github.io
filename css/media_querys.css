@@ -70,7 +70,7 @@
     }
 
     #description {
-        font-size: x-small;
+        font-size: medium
     }
 
     nav .title-share-button {
@@ -100,12 +100,12 @@
         margin-top: 20px;
     }
 
-    #name_description h6 {
+    /* #name_description h6 {
         font-size: x-small
-    }
+    } */
 
     #name_description .name-icon {
-        margin-left: 230px;
+        margin-left: 250px;
         padding-top: 40px;
     }
 
