@@ -70,8 +70,7 @@
     }
 
     #description {
-        font-family:Tahoma;
-        font-size: medium
+        font-size: medium;
     }
 
     nav .title-share-button {
@@ -100,10 +99,6 @@
     #name {
         margin-top: 20px;
     }
-
-    /* #name_description h6 {
-        font-size: x-small
-    } */
 
     #name_description .name-icon {
         margin-left: 250px;
