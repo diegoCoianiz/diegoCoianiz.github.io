@@ -1,0 +1,41 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    border: solid aliceblue;
+}
+.grid div {
+    width: 176px;
+    height: 175px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.image-container {
+    margin-top: -10px;
+    margin-right: 32rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    transition: cubic-bezier(.07, 1.41, .85, 1.41) 10s;
+}
+.image-container img {
+    height: 7rem;
+}
+
+.empty-square {
+    background-color: brown;
+}
+
+.client-square {
+    background-color: rgb(255, 115, 0);
+}
+
+.machine-square {
+    background-color: rgb(37, 37, 37);
+}
+
+.icon {
+    cursor:pointer;
+}

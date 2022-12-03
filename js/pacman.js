@@ -217,8 +217,8 @@ document.addEventListener("DOMContentLoaded", () => {
         new Ghost("clyde", 650, 500),
         new Ghost("shadow", 398, 250),
         new Ghost("speedy", 357, 400),
-        new Ghost("Bashful", 497, 300),
-        new Ghost("Pokey", 482, 500),
+        new Ghost("bashful", 497, 300),
+        new Ghost("pokey", 482, 500),
     ]
 
     moveGhost = (ghost) => {
