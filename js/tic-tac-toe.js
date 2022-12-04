@@ -1,11 +1,15 @@
-clientScore = 0
-machineScore = 0
-startingGameNumber = 0
+let clientScore = 0
+let machineScore = 0
+let startingGameNumber = 0
+let clientsMove = false
+let firstMove
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.clear()
 
-    clientsMove = true
-    let emptySquares = []
+    let populatedSquares = []
+    let populatedMachineSquares = []
+    let populatedClientSquares = []
     const grid = document.querySelector(".grid")
     const clientScoreDisplay = document.getElementById("yourScore")
     const machineScoreDisplay = document.getElementById("machineScore")
@@ -15,15 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const createBoard = () => {
 
-        startingGameNumber++
-        console.log(machineOpen())
+        whoMovesFirst()
 
+        startingGameNumber++
         squares = []
         firstMove = true
-        clientsMove = !clientsMove
-        emptySquares = []
-
-        consola("INICIO")
+        populatedSquares = []
+        populatedMachineSquares = []
+        populatedClientSquares = []
 
         while (grid.getElementsByTagName("div").length > 0) {
             grid.removeChild(grid.getElementsByTagName("div")[0])
@@ -44,79 +47,85 @@ document.addEventListener("DOMContentLoaded", () => {
         if (machineOpen() && firstMove) {
             squares[1][1].classList.remove("empty-square")
             squares[1][1].classList.add("machine-square")
-            emptySquares.push(5)
-            console.log("*** primera jugada de la maquina ****")
+            populatedSquares.push(5)
+            populatedMachineSquares.push(5)
             clientsMove = true
             firstMove = false
         }
-
-        console.log(emptySquares)
     }
 
     const clientNextMove = (row, col) => {
-        if (clientsMove || (!machineOpen && firstMove)) {
-            if (squares[row][col].classList.contains("empty-square")) {
 
-                consola("CLIENTE SELECCIONA CASILLERO")
+        if ((populatedSquares.length < 9) && (clientsMove || (!machineOpen && firstMove)) &&
+            (squares[row][col].classList.contains("empty-square"))) {
 
-                squares[row][col].classList.remove("empty-square")
-                squares[row][col].classList.add("client-square")
+            squares[row][col].classList.remove("empty-square")
+            squares[row][col].classList.add("client-square")
+            populatedSquares.push((row * 3) + (col + 1))
+            populatedClientSquares.push((row * 3) + (col + 1))
 
-                clientsMove = false
-                clientScore++
-                clientScoreDisplay.innerHTML = clientScore
-                emptySquares.push((row * 3) + (col + 1))
+            if (firstMove) firstMove = false
 
-                if (firstMove) {
-                    firstMove = false
-                }
-
-                consola("FIN CLIENTE SELECCIONA CASILLERO")
-                machineNextMove()
-            } else {
-                consola("NO ENTRA SELECCION DE CASILLERO (casillero ya usado)")
-                machineScore++
-                machineScoreDisplay.innerHTML = machineScore
-            }
-        } else {
-            consola("NO ENTRA 1° IF SELECCION DE CASILLERO. NO es el turno")
+            checkVictory(populatedClientSquares.sort())
+            machineNextMove()
+            clientsMove = false
         }
-
-        console.log(emptySquares)
     }
 
     const machineNextMove = () => {
-        do {
-            tryToMove = Math.floor(Math.random(10) * 10)
-            if (tryToMove === 0) tryToMove++
-            // console.log("la maquina intenta mover a ", tryToMove)
-            // console.log(emptySquares.indexOf(tryToMove))
-            // console.log(emptySquares.indexOf(tryToMove) < 0)
-        } while (emptySquares.indexOf(tryToMove) !== -1);
-        console.log("la maquina se movera a ", tryToMove)
-        emptySquares.push(tryToMove)
-        
-        setTimeout( () => {
-            if(tryToMove%3 === 0){
-                console.log(tryToMove/3 - 1, 2)
-                squares[Math.floor(tryToMove/3 - 1)][2].classList.remove("empty-square")
-                squares[Math.floor(tryToMove/3 - 1)][2].classList.add("machine-square")
-            } else {
-                console.log(tryToMove/3, tryToMove%3 - 1)
-                squares[Math.floor(tryToMove/3)][Math.floor(tryToMove%3)-1].classList.remove("empty-square")
-                squares[Math.floor(tryToMove/3)][Math.floor(tryToMove%3)-1].classList.add("machine-square")
-            }
-            clientsMove = !clientsMove
-        },500)
+        if (populatedSquares.length < 9) {
+            counter = 0
+            do {
+                machineMovement = Math.floor(Math.random(10) * 10)
+                if (machineMovement === 0) machineMovement++
+                counter++
+                if (counter === 10) {
+                    for (let i = 1; i < 10; i++) {
+                        if (populatedSquares.indexOf(i) === -1) {
+                            machineMovement = i
+                            break
+                        }
+                    }
+                }
 
-        console.log(emptySquares)
+            } while (populatedSquares.indexOf(machineMovement) !== -1 && populatedSquares.length < 9);
+            populatedSquares.push(machineMovement)
+            populatedMachineSquares.push(machineMovement)
+
+            setTimeout(() => {
+                if (machineMovement % 3 === 0) {
+                    squares[Math.floor(machineMovement / 3 - 1)][2].classList.remove("empty-square")
+                    squares[Math.floor(machineMovement / 3 - 1)][2].classList.add("machine-square")
+                } else {
+                    squares[Math.floor(machineMovement / 3)][Math.floor(machineMovement % 3) - 1].classList.remove("empty-square")
+                    squares[Math.floor(machineMovement / 3)][Math.floor(machineMovement % 3) - 1].classList.add("machine-square")
+                }
+
+                checkVictory(populatedMachineSquares.sort())
+                clientsMove = !clientsMove
+            }, 500)
+        }
 
     }
 
+    const checkVictory = (userSquare) => {
+
+        if ((userSquare.length > 2) && ((userSquare.includes(3) && userSquare.includes(5) && userSquare.includes(7)) //diagonal
+            || ((userSquare.includes(1) && userSquare.includes(2) && userSquare.includes(3)) || //rows
+                (userSquare.includes(4) && userSquare.includes(5) && userSquare.includes(6)) ||
+                (userSquare.includes(7) && userSquare.includes(8) && userSquare.includes(9)))
+            || ((userSquare.includes(1) && userSquare.includes(4) && userSquare.includes(7)) || //columns
+                (userSquare.includes(2) && userSquare.includes(5) && userSquare.includes(8)) ||
+                (userSquare.includes(3) && userSquare.includes(6) && userSquare.includes(9)))
+            || (userSquare.includes(1) && userSquare.includes(5) && userSquare.includes(9)))) { // diagonal
+
+            while (populatedSquares.length < 10) populatedSquares.push("end")
+
+            if(!clientsMove) machineScoreDisplay.innerHTML = ++machineScore
+            else clientScoreDisplay.innerHTML = ++clientScore
+        }
+    }
     createBoard()
-
-    consola("FIN DEL EVENTO")
-
 })
 
 const machineOpen = () => {
@@ -125,8 +134,8 @@ const machineOpen = () => {
     } else return true
 }
 
-const consola = (posicion) => {
-    console.log(posicion)
-    console.log(`primer movimiento: ${firstMove}; cliente mueve: ${clientsMove} o arranca proxima partida :${machineOpen()},
-    (turno de maquina?  ${!clientsMove || (machineOpen() && firstMove)}\n`)
+const whoMovesFirst =() => {
+    if (startingGameNumber % 2 === 0) {
+        clientsMove = false
+    } else clientsMove = true
 }
