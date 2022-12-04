@@ -39,3 +39,22 @@
 .icon {
     cursor:pointer;
 }
+
+@media screen and (max-width: 541px) {
+    .grid {
+        width: 400px;
+        height: 400px;
+        padding-left: 3px;
+    }
+
+    .grid div {
+        width: 122px;
+        height: 122px;
+    }
+
+    .image-container {
+        margin-top: 1px;
+        margin-right: 25rem;
+    }
+
+}
