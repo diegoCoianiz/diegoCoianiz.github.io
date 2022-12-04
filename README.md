@@ -4,6 +4,6 @@
 
 At the moment of the creation of the repo (29/11/2022) this page is working as a frontend proyect however the next step, once i decide the views bein complete, is create the backend server with a DB connection so everyone will be able to create an account on the site and have it's own profile page.
 
-(GitHub Page's link!)[https://diegocoianiz.github.io/index.html]
+### [GitHub Page's link!](https://diegocoianiz.github.io/index.html)
 
 ![profile](https://github.com/diegoCoianiz/diegoCoianiz.github.io/blob/main/img/IndexPortofolio.jpg)
