@@ -56,5 +56,31 @@
         margin-top: 1px;
         margin-right: 25rem;
     }
+}
 
+@media screen and (max-width: 320px) {
+    .grid {
+        width: 250px;
+        height: 250px;
+    }
+
+    .grid div {
+        width: 73px;
+        height: 73px;
+    }
+
+    .image-container {
+        margin-top: 18.5rem;
+        margin-right: 10rem;
+        position:absolute ;
+    }
+
+    .title {
+        width: 220px;
+        height: 50px;
+
+    }
+    .title svg {
+        margin: 0px;
+    }
 }
