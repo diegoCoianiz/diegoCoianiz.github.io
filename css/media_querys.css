@@ -110,6 +110,30 @@
     }
 }
 
+@media screen and (max-width: 360px) { /* CELLPHONE */
+
+    .image-container {
+        margin-bottom: -25px;
+    }
+
+    #description {
+        margin-top: 10px;
+        font-size: medium;
+    }
+
+    nav .title-share-button {
+        margin: 1px 1.5rem;
+    }
+
+    nav .title-share-button h1 {
+        margin-left: 0.5rem
+    }
+
+    .title h3    {
+        font-size: large;
+    }
+}
+
 @media screen and (max-width: 320px) {
 
     header {
@@ -127,4 +151,4 @@
     nav .title-share-button {
         margin: 1px 1.5rem;
     }
-}
+} 

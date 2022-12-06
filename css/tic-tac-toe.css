@@ -58,29 +58,29 @@
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 360px) { /* CELLPHONE */
     .grid {
-        width: 250px;
-        height: 250px;
+        width: 320px;
+        height: 320px;
     }
 
     .grid div {
-        width: 73px;
-        height: 73px;
+        width: 95px;
+        height: 95px;
     }
 
     .image-container {
-        margin-top: 18.5rem;
-        margin-right: 10rem;
-        position:absolute ;
+        margin-right: 14rem;
     }
 
     .title {
+        margin-top: 2rem;
+        margin-left: 8rem;
         width: 220px;
-        height: 50px;
+        height: 65px;
 
     }
     .title svg {
-        margin: 0px;
+        margin: 5px;
     }
 }
