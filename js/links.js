@@ -1,5 +1,7 @@
 let shareButtons = document.querySelectorAll(".title-share-button")
 const section = document.getElementById("section")
+const hrefCVSpanish = `https://drive.google.com/file/d/15CqytrefrhnfD_BNx2dvRdkdhaOJwaYW/view?usp=share_link`
+const hrefCVEnglish = `https://drive.google.com/file/d/1RdL_YXBGOq2Aefy0s5MyTrNfWqFMJOR4/view?usp=share_link`
 
 prevent = () => {
     shareButtons.forEach(Button =>
@@ -79,7 +81,7 @@ const contact_button = `
         <h3 class="expand">Arg (+54) 341 3 751398</h3>
         <div class="title-share-button"></div>
     </div>
-    <a href="https://drive.google.com/file/d/1RdL_YXBGOq2Aefy0s5MyTrNfWqFMJOR4/view?usp=share_link" target="_blank" class="title">
+    <a href=${hrefCVEnglish} target="_blank" class="title">
     <div class="icon">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-richtext" viewBox="0 0 16 16"> 
         <path d="M7.5 3.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047L11 4.75V7a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 7v-.5s1.54-1.274 1.639-1.208zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/> 
@@ -88,7 +90,7 @@ const contact_button = `
     <h3 class="expand"> English CV</h3>
     <div class="title-share-button"></div>
     </a>
-    <a href="https://drive.google.com/file/d/1PaRwM-EwetbVQ3QFiY_6h1ifver5DbYY/view?usp=share_link" target="_blank" class="title">
+    <a href=${hrefCVSpanish} target="_blank" class="title">
     <div class="icon">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-richtext" viewBox="0 0 16 16"> 
         <path d="M7.5 3.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0zm-.861 1.542 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047L11 4.75V7a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 7v-.5s1.54-1.274 1.639-1.208zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/> 
